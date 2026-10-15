@@ -10,8 +10,8 @@ services:
     autoDeploy: true
     envVars:
       - key: SITE_NAME
-        value: Pagecraft
-      - key: SITE_URL          # your public address, e.g. https://pagecraft.in
+        value: EasyPDFHub
+      - key: SITE_URL          # your public address, e.g. https://easypdfhub.in
         sync: false
       - key: CONTACT_EMAIL     # shown on the privacy and terms pages
         sync: false
