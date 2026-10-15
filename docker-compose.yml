@@ -1,0 +1,16 @@
+# Run on your own computer or a VPS:  docker compose up -d --build
+# Then open http://localhost:8000
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      SITE_NAME: Pagecraft
+      SITE_URL: ""                       # e.g. https://pagecraft.in
+      CONTACT_EMAIL: contact@example.com
+      MAX_UPLOAD_MB: "50"
+      MAX_CONCURRENT: "2"
+      RATE_LIMIT: "30"
+    restart: unless-stopped
+    mem_limit: 2g

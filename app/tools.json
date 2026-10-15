@@ -1,0 +1,43 @@
+{
+  "groups": [
+    {"id": "org",  "label": "Organize PDF",     "color": "--c-org"},
+    {"id": "opt",  "label": "Optimize PDF",     "color": "--c-opt"},
+    {"id": "to",   "label": "Convert to PDF",   "color": "--c-to"},
+    {"id": "from", "label": "Convert from PDF", "color": "--c-from"},
+    {"id": "edit", "label": "Edit PDF",         "color": "--c-edit"},
+    {"id": "sec",  "label": "PDF security",     "color": "--c-sec"}
+  ],
+  "tools": [
+    {"id": "merge",     "slug": "merge-pdf",         "g": "org",  "name": "Merge PDF",        "desc": "Combine several PDFs into one file, in the order you choose.", "kind": "files", "accept": ".pdf,application/pdf", "multi": true},
+    {"id": "split",     "slug": "split-pdf",         "g": "org",  "name": "Split PDF",        "desc": "Break a PDF into single pages, page ranges or equal chunks.", "kind": "pages", "mode": "view"},
+    {"id": "remove",    "slug": "remove-pages",      "g": "org",  "name": "Remove pages",     "desc": "Click the pages you don't need and save a clean copy.", "kind": "pages", "mode": "select"},
+    {"id": "extract",   "slug": "extract-pages",     "g": "org",  "name": "Extract pages",    "desc": "Pick pages and save them as a new PDF or separate files.", "kind": "pages", "mode": "select"},
+    {"id": "organize",  "slug": "organize-pdf",      "g": "org",  "name": "Organize PDF",     "desc": "Reorder, rotate and delete pages by dragging thumbnails.", "kind": "pages", "mode": "organize"},
+
+    {"id": "compress",  "slug": "compress-pdf",      "g": "opt",  "name": "Compress PDF",     "desc": "Shrink scanned and image-heavy PDFs for email and upload.", "kind": "pages", "mode": "view"},
+    {"id": "repair",    "slug": "repair-pdf",        "g": "opt",  "name": "Repair PDF",       "desc": "Fix damaged PDFs that won't open or show errors.", "kind": "server", "accept": ".pdf,application/pdf", "out": "pdf"},
+    {"id": "ocr",       "slug": "ocr-pdf",           "g": "opt",  "name": "OCR PDF",          "desc": "Make scanned PDFs searchable so you can find and copy their text.", "kind": "pages", "mode": "view"},
+
+    {"id": "img2pdf",   "slug": "jpg-to-pdf",        "g": "to",   "name": "JPG to PDF",       "desc": "Turn photos and scans (JPG, PNG, WebP) into one PDF.", "kind": "files", "accept": "image/*", "multi": true},
+    {"id": "word2pdf",  "slug": "word-to-pdf",       "g": "to",   "name": "Word to PDF",      "desc": "Convert DOC and DOCX files to PDF with the layout kept intact.", "kind": "server", "accept": ".doc,.docx,.odt,.rtf,.txt", "out": "pdf"},
+    {"id": "ppt2pdf",   "slug": "powerpoint-to-pdf", "g": "to",   "name": "PowerPoint to PDF", "desc": "Turn PPT and PPTX slideshows into PDF, one slide per page.", "kind": "server", "accept": ".ppt,.pptx,.pps,.ppsx,.odp", "out": "pdf"},
+    {"id": "excel2pdf", "slug": "excel-to-pdf",      "g": "to",   "name": "Excel to PDF",     "desc": "Convert XLS and XLSX spreadsheets into easy-to-share PDFs.", "kind": "server", "accept": ".xls,.xlsx,.ods,.csv", "out": "pdf"},
+    {"id": "html2pdf",  "slug": "html-to-pdf",       "g": "to",   "name": "HTML to PDF",      "desc": "Turn HTML code or a saved web page (.html) into a PDF.", "kind": "html", "accept": ".html,.htm,text/html"},
+
+    {"id": "pdf2img",   "slug": "pdf-to-jpg",        "g": "from", "name": "PDF to JPG",       "desc": "Save each page as a high-quality JPG or PNG image.", "kind": "pages", "mode": "view"},
+    {"id": "pdf2word",  "slug": "pdf-to-word",       "g": "from", "name": "PDF to Word",      "desc": "Turn a PDF into an editable Word file, keeping text, tables and images.", "kind": "server", "accept": ".pdf,application/pdf", "out": "docx"},
+    {"id": "pdf2ppt",   "slug": "pdf-to-powerpoint", "g": "from", "name": "PDF to PowerPoint", "desc": "Turn PDF pages into PowerPoint slides you can present or edit.", "kind": "server", "accept": ".pdf,application/pdf", "out": "pptx"},
+    {"id": "pdf2excel", "slug": "pdf-to-excel",      "g": "from", "name": "PDF to Excel",     "desc": "Pull tables out of a PDF into an Excel sheet with real rows and columns.", "kind": "server", "accept": ".pdf,application/pdf", "out": "xlsx"},
+    {"id": "pdfa",      "slug": "pdf-to-pdfa",       "g": "from", "name": "PDF to PDF/A",     "desc": "Convert to PDF/A, the archive format required by courts and government portals.", "kind": "server", "accept": ".pdf,application/pdf", "out": "pdf"},
+    {"id": "text",      "slug": "pdf-to-text",       "g": "from", "name": "PDF to Text",      "desc": "Pull out all the text from a PDF to copy or save.", "kind": "pages", "mode": "view"},
+
+    {"id": "rotate",    "slug": "rotate-pdf",        "g": "edit", "name": "Rotate PDF",       "desc": "Turn every page, or only the pages that came out sideways.", "kind": "pages", "mode": "rotate"},
+    {"id": "numbers",   "slug": "add-page-numbers",  "g": "edit", "name": "Add page numbers", "desc": "Stamp page numbers in the corner or center of each page.", "kind": "pages", "mode": "view"},
+    {"id": "watermark", "slug": "add-watermark",     "g": "edit", "name": "Add watermark",    "desc": "Place a text stamp such as DRAFT or CONFIDENTIAL.", "kind": "pages", "mode": "view"},
+    {"id": "crop",      "slug": "crop-pdf",          "g": "edit", "name": "Crop PDF",         "desc": "Trim white margins from every page by a set amount.", "kind": "pages", "mode": "view"},
+
+    {"id": "unlock",    "slug": "unlock-pdf",        "g": "sec",  "name": "Unlock PDF",       "desc": "Remove the password and restrictions from a PDF you can open.", "kind": "raw"},
+    {"id": "protect",   "slug": "protect-pdf",       "g": "sec",  "name": "Protect PDF",      "desc": "Add a password so only people who know it can open the file.", "kind": "pages", "mode": "view"},
+    {"id": "sign",      "slug": "sign-pdf",          "g": "sec",  "name": "Sign PDF",         "desc": "Draw your signature and place it anywhere on a page.", "kind": "pages", "mode": "pick"}
+  ]
+}

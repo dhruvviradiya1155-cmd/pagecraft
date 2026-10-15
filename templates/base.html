@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESCRIPTION}}">
+<link rel="canonical" href="{{CANONICAL}}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{SITE_NAME}}">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{DESCRIPTION}}">
+<meta property="og:url" content="{{CANONICAL}}">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#2445d4">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="/assets/styles.css?v={{CSS_V}}">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" data-nav><span class="logo-mark"><i></i><i></i></span>{{SITE_NAME}}</a>
+    <nav class="main" aria-label="Main">
+      <a href="/merge-pdf" data-nav class="hide-sm">Merge</a>
+      <a href="/compress-pdf" data-nav class="hide-sm">Compress</a>
+      <a href="/pdf-to-word" data-nav class="hide-sm">PDF to Word</a>
+      <a href="/word-to-pdf" data-nav class="hide-sm">Word to PDF</a>
+      <a href="/" data-nav>All tools</a>
+    </nav>
+  </div>
+</header>
+
+<main id="app">{{CONTENT}}</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <a class="logo" href="/" data-nav><span class="logo-mark"><i></i><i></i></span>{{SITE_NAME}}</a>
+      <p>Free PDF tools for everyone. Most tools run in your browser, so your files stay on your device.</p>
+    </div>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="/about" data-nav>About</a>
+      <a href="/privacy" data-nav>Privacy</a>
+      <a href="/terms" data-nav>Terms</a>
+      <span>Contact: <span class="sel">{{CONTACT_EMAIL}}</span></span>
+    </nav>
+  </div>
+  <div class="wrap copy">© <span id="yr">2026</span> {{SITE_NAME}}</div>
+</footer>
+
+<script id="boot" type="application/json">{{BOOT}}</script>
+<script src="https://cdn.jsdelivr.net/npm/@cantoo/pdf-lib@2.11.1/dist/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="/assets/app.js?v={{JS_V}}"></script>
+</body>
+</html>

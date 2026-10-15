@@ -1,0 +1,23 @@
+# One-click deploy on Render: New + > Blueprint > pick this repository.
+services:
+  - type: web
+    name: pagecraft
+    runtime: docker
+    # "free" works for testing but sleeps after 15 minutes without visitors (first visit then
+    # takes about a minute). Switch to "starter" before you launch publicly.
+    plan: free
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: SITE_NAME
+        value: Pagecraft
+      - key: SITE_URL          # your public address, e.g. https://pagecraft.in
+        sync: false
+      - key: CONTACT_EMAIL     # shown on the privacy and terms pages
+        sync: false
+      - key: MAX_UPLOAD_MB
+        value: "50"
+      - key: MAX_CONCURRENT    # 1 on free/starter (512 MB); 2-3 on 2 GB plans
+        value: "1"
+      - key: RATE_LIMIT
+        value: "30"
